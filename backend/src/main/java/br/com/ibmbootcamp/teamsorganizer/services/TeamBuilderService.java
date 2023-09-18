@@ -48,11 +48,11 @@ public class TeamBuilderService {
   private boolean canBeAllocated(PlayerEntity player, TeamEntity team) {
     boolean hasMatchingSurname = team.getTeamPlyers().stream()
             .map(this::getSurname)
-            .anyMatch(teamPlayerSurname -> teamPlayerSurname.equals(getSurname(player)));
+            .anyMatch(teamPlayerSurname -> teamPlayerSurname.toLowerCase().equals(getSurname(player).toLowerCase()));
 
     boolean hasMatchingSurnameFirstLetter = team.getTeamPlyers().stream()
             .map(this::getSurname)
-            .anyMatch(teamPlayerSuername -> teamPlayerSuername.charAt(0) == getSurname(player).charAt(0));
+            .anyMatch(teamPlayerSuername -> teamPlayerSuername.toLowerCase().charAt(0) == getSurname(player).toLowerCase().charAt(0));
 
     return !hasMatchingSurname && hasMatchingSurnameFirstLetter;
   }
