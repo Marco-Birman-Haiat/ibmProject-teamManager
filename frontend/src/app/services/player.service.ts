@@ -8,7 +8,8 @@ import { Player } from '../entities/player';
   providedIn: 'root'
 })
 export class PlayerService {
-  private playersEndpoint = 'http://localhost:8080/jogadores'
+  private playersEndpoint = 'teammanager-backend-production.up.railway.app/jogadores'
+  // private playersEndpoint = 'http://localhost:8080/jogadores'
 
   constructor(private http: HttpClient) { }
 
