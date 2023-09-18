@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { PlayerFormComponent } from './components/player-form/player-form.component'
+import { PlayerFormComponent } from './components/player-form/player-form.component';
+import { TeamsTableComponent } from './components/teams-table/teams-table.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerFormComponent
+    PlayerFormComponent,
+    TeamsTableComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

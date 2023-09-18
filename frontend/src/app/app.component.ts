@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlayerService } from './services/player.service';
 import { Player } from './entities/player';
 import { TeamService } from './services/team.service';
@@ -9,7 +9,7 @@ import { Team } from './entities/team';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'frontend';
   allTeamsList: Team[] = [];
 
@@ -17,6 +17,11 @@ export class AppComponent {
     private playerService: PlayerService,
     private teamService: TeamService
   ) {}
+  
+  
+  ngOnInit(): void {
+    this.getAllTeams();
+  }
   
   
   orderTeams(): void {

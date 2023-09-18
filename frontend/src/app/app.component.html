@@ -1,33 +1,7 @@
-<header class="bg-black text-white py-3">
-  <h3 class="text-center">Organizador de Times</h3>
-</header>
+<app-header></app-header>
 <app-player-form (allocatePlayerInTeam)="onAllocatePlayerInTeam($event)"></app-player-form>
-<div class="mx-5 my-3">
-  <h2>Tabela de Times</h2>
-  <button (click)="getAllTeams()" type="button" class="btn btn-primary me-2">Buscar Times</button>
-  <button (click)="deleteAllTeams()" type="button" class="btn btn-danger">Apagar Jogadores</button>
+<div class="mx-5 my-3">  
+  <button (click)="getAllTeams()" type="button" class="btn btn-sm btn-primary me-2">Buscar Times</button>
+  <button (click)="deleteAllTeams()" type="button" class="btn btn-sm btn-danger">Apagar Jogadores</button>
 </div>
-<div *ngIf="allTeamsList.length > 0" class="mx-5 border rounded-3 p-3 w-auto">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>
-          Nome
-        </th>
-        <th>
-          Jogadores
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let team of allTeamsList">
-        <td>
-          {{team.name}}
-        </td>
-        <td>
-          {{team.teamPlayers.join(', ')}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<app-teams-table [teamList]="allTeamsList"></app-teams-table>
