@@ -22,4 +22,8 @@ public class PlayerEntity {
   @JoinColumn(name = "team_id")
   @JsonIgnore
   private TeamEntity team;
+
+  public PlayerEntity(String name) {
+    this.name = name;
+  }
 }
