@@ -8,13 +8,12 @@ import { Player } from '../entities/player';
   providedIn: 'root'
 })
 export class PlayerService {
-  private playersEndpoint = 'teammanager-backend-production.up.railway.app/jogadores'
+  private playersEndpoint = 'http://teammanager-backend-production.up.railway.app/jogadores'
   // private playersEndpoint = 'http://localhost:8080/jogadores'
 
   constructor(private http: HttpClient) { }
 
   public allocatePlayerInTeam(newPlayer: Player): Observable<any> {
-    console.log(newPlayer);
     return this.http.post(this.playersEndpoint, newPlayer);
   }
 
