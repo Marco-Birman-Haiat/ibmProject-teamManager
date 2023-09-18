@@ -54,9 +54,6 @@ public class TeamBuilderService {
             .map(this::getSurname)
             .anyMatch(teamPlayerSuername -> teamPlayerSuername.charAt(0) == getSurname(player).charAt(0));
 
-    System.out.println("hasMatchingSurnameFirstLetter: " + hasMatchingSurnameFirstLetter);
-    System.out.println("hasMatchingSurname: " + hasMatchingSurname);
-
     return !hasMatchingSurname && hasMatchingSurnameFirstLetter;
   }
 

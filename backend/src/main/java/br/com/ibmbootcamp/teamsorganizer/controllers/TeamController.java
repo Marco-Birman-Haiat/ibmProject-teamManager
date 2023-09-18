@@ -1,5 +1,6 @@
 package br.com.ibmbootcamp.teamsorganizer.controllers;
 
+import br.com.ibmbootcamp.teamsorganizer.controllers.dtos.TeamDto;
 import br.com.ibmbootcamp.teamsorganizer.entities.PlayerEntity;
 import br.com.ibmbootcamp.teamsorganizer.entities.TeamEntity;
 import br.com.ibmbootcamp.teamsorganizer.services.PlayerService;
@@ -11,9 +12,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/times")
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class TeamController {
 
   @Autowired
@@ -32,8 +35,9 @@ public class TeamController {
   }
 
   @GetMapping
-  public ResponseEntity<List<TeamEntity>> getAllTeams() {
-    List<TeamEntity> foundTeams = teamService.getAllTeams();
-    return ResponseEntity.status(HttpStatus.CREATED).body(foundTeams);
+  public ResponseEntity<Map<String, List<String>>> getAllTeams() {
+    List<TeamEntity> allTeams = teamService.getAllTeams();
+    Map<String, List<String>> allTeamsView = TeamDto.mapTeamListToTeamsView(allTeams);
+    return ResponseEntity.status(HttpStatus.CREATED).body(allTeamsView);
   }
 }
