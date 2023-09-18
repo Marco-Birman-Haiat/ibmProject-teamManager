@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TeamService {
-  private teamEndpoint = 'http://teammanager-backend-production.up.railway.app/times'
+  private teamEndpoint = 'https://teammanager-backend-production.up.railway.app/times'
   // private teamEndpoint = 'http://localhost:8080/times'
 
   constructor(private http: HttpClient) { }
