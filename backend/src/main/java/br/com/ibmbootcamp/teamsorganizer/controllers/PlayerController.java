@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/jogadores")
-@CrossOrigin(origins = {"http://localhost:4200", "https://teammanager-frontend-production.up.railway.app/"})
+@CrossOrigin()
 public class PlayerController {
 
   @Autowired
