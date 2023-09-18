@@ -1,0 +1,9 @@
+<form class="m-5 p-3">
+  <div class="mb-3">
+    <label for="nameInput" class="form-label">Nome do Jogador</label>
+    <input type="text" [(ngModel)]="playerToInsert.name"
+    placeholder="insira um nome" id="nameInput" name="playerName"
+    class="form-control mb-2 w-75"/>
+    <button (click)="onClickInsertPlayer()" type="submit" class="btn btn-primary">Alocar em um time</button>
+  </div>
+</form>
