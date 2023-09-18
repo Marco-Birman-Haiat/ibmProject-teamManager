@@ -4,6 +4,6 @@
     <input type="text" [(ngModel)]="playerToInsert.name"
     placeholder="insira um nome" id="nameInput" name="playerName"
     class="form-control mb-2 w-75"/>
-    <button (click)="onClickInsertPlayer()" type="submit" class="btn btn-primary">Alocar em um time</button>
+    <button (click)="onClickInsertPlayer()" type="submit" class="btn btn-primary" [disabled]="!checkName()">Alocar em um time</button>
   </div>
 </form>

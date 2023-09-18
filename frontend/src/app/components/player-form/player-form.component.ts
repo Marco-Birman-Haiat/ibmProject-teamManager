@@ -12,5 +12,13 @@ export class PlayerFormComponent {
 
   onClickInsertPlayer(): void {
     this.allocatePlayerInTeam.emit(this.playerToInsert);
+    this.playerToInsert = new Player();
+  }
+
+  checkName(): boolean {
+    if (!this.playerToInsert.name) {
+      return false;
+    }
+    return this.playerToInsert.name.trim().split(' ').length > 1;
   }
 }
