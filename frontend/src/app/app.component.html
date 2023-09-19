@@ -1,7 +1,11 @@
 <app-header></app-header>
-<app-player-form (allocatePlayerInTeam)="onAllocatePlayerInTeam($event)"></app-player-form>
-<div class="mx-5 my-3">  
-  <button (click)="getAllTeams()" type="button" class="btn btn-sm btn-primary me-2">Buscar Times</button>
-  <button (click)="deleteAllTeams()" type="button" class="btn btn-sm btn-danger">Apagar Jogadores</button>
+<div class="d-flex align-items-center justify-content-center">  
+  <app-player-form (allocatePlayerInTeam)="onAllocatePlayerInTeam($event)"></app-player-form>
+  <div class="m-5 w-50 min-w-25 ps-5">
+    <p>Comandos:</p>
+    <button (click)="getAllTeams()" type="button" class="btn btn-sm btn-primary me-2">Buscar Times</button>
+    <button (click)="deleteAllTeams()" type="button" class="btn btn-sm btn-danger">Apagar Jogadores</button>
+  </div>
 </div>
+
 <app-teams-table [teamList]="allTeamsList"></app-teams-table>
